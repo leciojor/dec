@@ -8,3 +8,22 @@ INFO:root:User input: ola initiated
 INFO:root:User input: ola initiated
 INFO:root:User input: ola initiated
 INFO:root:User input: ola initiated
+INFO:root:User input: ola initiated
+INFO:root:User input: ola initiated
+ERROR:root:Error when generating answer: Ollama call failed with status code 404. Maybe your model is not found and you should pull the model with `ollama pull wizardml2`.
+INFO:root:User input: ola initiated
+ERROR:root:Error when generating answer: Ollama call failed with status code 404. Maybe your model is not found and you should pull the model with `ollama pull llama3`.
+INFO:root:User input: ola initiated
+ERROR:root:Error when generating answer: Ollama call failed with status code 404. Maybe your model is not found and you should pull the model with `ollama pull wizardml2`.
+INFO:root:User input: ola initiated
+ERROR:root:Error when generating answer: Ollama call failed with status code 404. Maybe your model is not found and you should pull the model with `ollama pull wizardml2`.
+INFO:root:User input: ola initiated
+ERROR:root:Error when generating answer: Ollama call failed with status code 404. Maybe your model is not found and you should pull the model with `ollama pull wizardml2`.
+INFO:root:User input: ola initiated
+ERROR:root:Error when generating answer: Ollama call failed with status code 404. Maybe your model is not found and you should pull the model with `ollama pull wizardml2`.
+INFO:root:User input: ola initiated
+ERROR:root:Error when generating answer: Ollama call failed with status code 404. Maybe your model is not found and you should pull the model with `ollama pull wizardml2`.
+INFO:root:User input: ola initiated
+ERROR:root:Error when generating answer: Ollama call failed with status code 404. Maybe your model is not found and you should pull the model with `ollama pull wizardml2`.
+INFO:root:User input: ola initiated
+ERROR:root:Error when generating answer: Ollama call failed with status code 404. Maybe your model is not found and you should pull the model with `ollama pull wizardml2`.

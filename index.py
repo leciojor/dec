@@ -7,7 +7,7 @@ def main():
     logging.basicConfig(filename='log.txt', level=logging.INFO)
 
     st.title("D.E.C.")
-    llm = ChatOllama(model="wizardml2")
+    llm = ChatOllama(model="wizardml2", base_url="http://localhost:11434/")
 
     if 'user_input' not in st.session_state:
         state['user_input'] = ''
@@ -23,15 +23,13 @@ def main():
     if state['initiate']:
         logging.info(f'User input: {state["user_input"]} initiated')
         try:
+
             chat_model_response = llm.invoke(state['user_input'])
             st.success(chat_model_response)
 
         except Exception as e:
             st.error(e)
-        
-        
-
-
+            logging.error(f'Error when generating answer: {e}')
 
 if __name__ == "__main__":
     main()
