@@ -33,23 +33,27 @@ def taskDefinition(self, agent, goal = "", expected_output ="", context = ""):
     )
 
 
-def chattingBox(input, response, llm):
+def messageRegister(llm):
+    state['messages'].append({"role": "user", "content": state['user_input']})
+    with st.chat_message("user"):
+        st.markdown(state['user_input'])
+    with st.chat_message("assistant"):
+        state['response'] = llm.invoke(state['user_input'])
+        response = st.markdown(state['response'])
+        logging.info(f'Model response: {state["response"]} for input: {state["user_input"]}')
+    state['messages'].append({"role": "assistant", "content": response})
+
+
+def chattingBox(llm):
     if "messages" not in state:
         state['messages'] = []
 
     for message in state['messages']:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
-
-    if prompt := st.chat_input(input):
-        state['messages'].append({"role": "user", "content": prompt})
-        with st.chat_message("user"):
-            st.markdown(prompt)
-        with st.chat_message("assistant"):
-            chat_model_response = llm.invoke(state['user_input'])
-            response = st.markdown(chat_model_response)
-            logging.info(f'Model response: {chat_model_response} for input: {prompt}')
-    state['messages'].append({"role": "assistant", "content": response})
+    if input := st.chat_input("REVELE SEUS DESEJOS: "):
+        state['user_input'] = input
+        messageRegister(llm)
 
 
 
@@ -64,6 +68,8 @@ def main():
     ]
     )
 
+    logging.info('Rerun')
+
     st.title("Projeto DECI")
 
     if 'user_input' not in state:
@@ -75,16 +81,16 @@ def main():
     if 'response' not in state:
         state['response'] = ''
 
+
     if not state['initiate']:
-        state['user_input'] = st.text_input("REVELE SEUS DESEJOS: ")
-        state['initiate'] = st.button('Iniciar')
+        state['initiate'] = st.button('INICIAR')
 
 
     if state['initiate']:
         logging.info(f'User input: {state["user_input"]} initiated')
 
         try:
-            chattingBox(state['user_input'], state['response'], state['llm'])
+            chattingBox(state['llm'])
         except Exception as e:
             st.error(f'Error when generating chatbox: {e}')
             logging.error(f'Error when generating chatbox: {e}')
