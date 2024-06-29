@@ -39,9 +39,9 @@ def messageRegister(llm):
         st.markdown(state['user_input'])
     with st.chat_message("assistant"):
         state['response'] = llm.invoke(state['user_input'])
-        response = st.markdown(state['response'])
+        st.markdown(state['response'])
         logging.info(f'Model response: {state["response"]} for input: {state["user_input"]}')
-    state['messages'].append({"role": "assistant", "content": response})
+    state['messages'].append({"role": "assistant", "content": state['response']})
 
 
 def chattingBox(llm):
