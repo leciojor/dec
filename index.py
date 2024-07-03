@@ -40,6 +40,11 @@ def chattingBox(llm):
 def beggining():
     state['initiate'] = False
 
+def restart():
+    for key, value in state.items():
+        state.pop(key)
+    st.rerun() 
+
 def main():
 
     logging.info('Rerun')
@@ -83,6 +88,7 @@ def main():
 
 
 def nextStatesCheck():
+    st.button('VOLTAR', on_click = restart) 
     if state['resumo']:
         resumo()
     if state['math']:

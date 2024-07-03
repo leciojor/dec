@@ -4,3 +4,4 @@
 2024-07-02 22:12:19 - root - INFO - User input: oiii initiated
 2024-07-02 22:12:19 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:11434
 2024-07-02 22:12:26 - root - INFO - Rerun
+2024-07-02 22:12:51 - urllib3.connectionpool - DEBUG - http://localhost:11434 "POST /api/generate HTTP/11" 200 None
