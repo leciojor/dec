@@ -1,0 +1,6 @@
+2024-07-02 22:11:24 - root - INFO - Rerun
+2024-07-02 22:12:15 - root - INFO - Rerun
+2024-07-02 22:12:19 - root - INFO - Rerun
+2024-07-02 22:12:19 - root - INFO - User input: oiii initiated
+2024-07-02 22:12:19 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:11434
+2024-07-02 22:12:26 - root - INFO - Rerun

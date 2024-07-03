@@ -2,38 +2,19 @@ import streamlit as st
 from streamlit import session_state as state
 import logging
 from langchain_community.llms import Ollama
-from crewai import Agent, Task
-from textwrap import dedent
 
-
-
-
-def defineTeamAgents(self, role="", goal="", backstory="", tools=[], temperature = 0.8):
-    logging.info(f"Defining team agent with role: {role}")
-    return Agent(
-        role=role,
-        goal=dedent(goal),
-        backstory=dedent(backstory),
-        tools=tools,
-        allow_delegation=False,
-        llm=Ollama(model="wizardml2:latest", base_url="http://localhost:11434/", temperature=temperature),
-        verbose=True,
+logging.basicConfig(
+    level=logging.DEBUG,  
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',  
+    datefmt='%Y-%m-%d %H:%M:%S', 
+    handlers=[
+        logging.FileHandler("log.txt"),  
+        logging.StreamHandler()  
+    ]
     )
-
-
-
-def taskDefinition(self, agent, goal = "", expected_output ="", context = ""):
-    return Task(description=dedent(f"""\
-        Do the following: {goal}.
-
-        """),
-        expected_output=expected_output,
-        agent=agent,
-        context=context
-    )
-
 
 def messageRegister(llm):
+    logging.info(f'User input: {state["user_input"]} initiated')
     state['messages'].append({"role": "user", "content": state['user_input']})
     with st.chat_message("user"):
         st.markdown(state['user_input'])
@@ -56,17 +37,10 @@ def chattingBox(llm):
         messageRegister(llm)
 
 
+def beggining():
+    state['initiate'] = False
 
 def main():
-    logging.basicConfig(
-    level=logging.DEBUG,  
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',  
-    datefmt='%Y-%m-%d %H:%M:%S', 
-    handlers=[
-        logging.FileHandler("log.txt"),  
-        logging.StreamHandler()  
-    ]
-    )
 
     logging.info('Rerun')
 
@@ -75,25 +49,62 @@ def main():
     if 'user_input' not in state:
         state['user_input'] = ''
     if 'llm' not in state:
-        state['llm'] =Ollama(model="wizardlm2:latest")
+        state['llm'] = Ollama(model="wizardlm2:latest")
     if 'initiate' not in state:
-        state['initiate'] = False
+        state['initiate'] = True
     if 'response' not in state:
         state['response'] = ''
-
-
-    if not state['initiate']:
-        state['initiate'] = st.button('INICIAR')
+    if 'resumo' not in state:
+        state['resumo'] = False
+    if 'math' not in state:
+        state['math'] = False
+    if 'arquivo' not in state:
+        state['arquivo'] = False
+    if 'image' not in state:
+        state['image'] = False
 
 
     if state['initiate']:
-        logging.info(f'User input: {state["user_input"]} initiated')
+        col1, col2, col3, col4 = st.columns(4)
+        state['resumo'] = col1.button('RESUMO DA INTERNET', on_click = beggining)
+        state['math'] = col2.button('MODELO PARA MATEMATICA', on_click = beggining)
+        state['arquivo'] = col3.button('GERADOR DE ARQUIVO', on_click = beggining)
+        state['image'] = col4.button('LEITOR DE IMAGEM', on_click = beggining)
 
         try:
             chattingBox(state['llm'])
         except Exception as e:
             st.error(f'Error when generating chatbox: {e}')
             logging.error(f'Error when generating chatbox: {e}')
+    
+    nextStatesCheck()
+
+
+
+
+def nextStatesCheck():
+    if state['resumo']:
+        resumo()
+    if state['math']:
+        math()
+    if state['arquivo']:
+        arquivo()
+    if state['image']:
+        imagem()
+
+
+def resumo():
+    pass
+
+def math():
+    pass
+
+def arquivo():
+    pass
+
+def imagem():
+    pass
+    
 
 if __name__ == "__main__":
     main()
