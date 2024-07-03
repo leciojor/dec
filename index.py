@@ -25,14 +25,14 @@ def messageRegister(llm):
     state['messages'].append({"role": "assistant", "content": state['response']})
 
 
-def chattingBox(llm):
+def chattingBox(llm, init_message):
     if "messages" not in state:
         state['messages'] = []
 
     for message in state['messages']:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
-    if input := st.chat_input("REVELE SEUS DESEJOS: "):
+    if input := st.chat_input(init_message):
         state['user_input'] = input
         messageRegister(llm)
 
@@ -43,7 +43,6 @@ def beggining():
 def restart():
     for key, value in state.items():
         state.pop(key)
-    st.rerun() 
 
 def main():
 
@@ -55,6 +54,8 @@ def main():
         state['user_input'] = ''
     if 'llm' not in state:
         state['llm'] = Ollama(model="wizardlm2:latest")
+    if 'llm_math' not in state:
+        state['llm_math'] = Ollama(model="wizard-math")
     if 'initiate' not in state:
         state['initiate'] = True
     if 'response' not in state:
@@ -77,12 +78,12 @@ def main():
         state['image'] = col4.button('LEITOR DE IMAGEM', on_click = beggining)
 
         try:
-            chattingBox(state['llm'])
+            chattingBox(state['llm'], 'DIGA A QUE VEIO: ')
         except Exception as e:
             st.error(f'Error when generating chatbox: {e}')
             logging.error(f'Error when generating chatbox: {e}')
-    
-    nextStatesCheck()
+    else:
+        nextStatesCheck()
 
 
 
@@ -103,7 +104,12 @@ def resumo():
     pass
 
 def math():
-    pass
+    try:
+        chattingBox(state['llm_math'], 'DIGA ME SEUS PROBLEMAS MATEMATICOS: ')
+    except Exception as e:
+        st.error(f'Error when generating chatbox: {e}')
+        logging.error(f'Error when generating chatbox: {e}')
+
 
 def arquivo():
     pass

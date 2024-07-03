@@ -5,3 +5,23 @@
 2024-07-02 22:12:19 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:11434
 2024-07-02 22:12:26 - root - INFO - Rerun
 2024-07-02 22:12:51 - urllib3.connectionpool - DEBUG - http://localhost:11434 "POST /api/generate HTTP/11" 200 None
+2024-07-02 22:24:42 - root - INFO - Rerun
+2024-07-02 22:24:50 - root - INFO - Rerun
+2024-07-02 22:24:52 - root - INFO - Rerun
+2024-07-02 22:29:20 - root - INFO - Rerun
+2024-07-02 22:29:23 - root - INFO - Rerun
+2024-07-02 22:29:24 - root - INFO - Rerun
+2024-07-02 22:30:26 - root - INFO - Rerun
+2024-07-02 22:30:26 - root - INFO - Rerun
+2024-07-02 22:30:27 - root - INFO - Rerun
+2024-07-02 22:30:28 - root - INFO - Rerun
+2024-07-02 22:30:30 - root - INFO - Rerun
+2024-07-02 22:30:31 - root - INFO - Rerun
+2024-07-02 22:30:32 - root - INFO - Rerun
+2024-07-02 22:30:33 - root - INFO - Rerun
+2024-07-02 22:30:34 - root - INFO - Rerun
+2024-07-02 22:30:35 - root - INFO - Rerun
+2024-07-02 22:30:41 - root - INFO - Rerun
+2024-07-02 22:30:42 - root - INFO - User input: oii initiated
+2024-07-02 22:30:42 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:11434
+2024-07-02 22:31:13 - urllib3.connectionpool - DEBUG - http://localhost:11434 "POST /api/generate HTTP/11" 200 None
