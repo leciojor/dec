@@ -25,3 +25,31 @@
 2024-07-02 22:30:42 - root - INFO - User input: oii initiated
 2024-07-02 22:30:42 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:11434
 2024-07-02 22:31:13 - urllib3.connectionpool - DEBUG - http://localhost:11434 "POST /api/generate HTTP/11" 200 None
+2024-07-02 22:35:41 - root - INFO - Rerun
+2024-07-02 22:35:45 - root - INFO - Rerun
+2024-07-02 22:35:49 - root - INFO - Rerun
+2024-07-02 22:36:35 - root - INFO - Rerun
+2024-07-02 22:36:43 - root - INFO - Rerun
+2024-07-02 22:36:46 - root - INFO - Rerun
+2024-07-02 22:36:49 - root - INFO - Rerun
+2024-07-02 22:36:49 - root - INFO - User input: aqui eu vim  initiated
+2024-07-02 22:36:49 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:11434
+2024-07-02 22:36:57 - urllib3.connectionpool - DEBUG - http://localhost:11434 "POST /api/generate HTTP/11" 200 None
+2024-07-02 22:37:16 - root - INFO - Rerun
+2024-07-02 22:37:36 - root - INFO - Model response: ¡Bienvenido! Estoy aquí para ayudarte en lo que necesites. Si tienes alguna pregunta o hay algo específico con lo que te pueda asistir, no dudes en decírmelo. ¿Con qué puedo ayudarte hoy? for input: aqui eu vim 
+2024-07-02 22:37:46 - root - INFO - Rerun
+2024-07-02 22:37:46 - root - INFO - User input: fala portugues comigo porra initiated
+2024-07-02 22:37:46 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:11434
+2024-07-02 22:37:54 - urllib3.connectionpool - DEBUG - http://localhost:11434 "POST /api/generate HTTP/11" 200 None
+2024-07-02 22:38:59 - root - INFO - Model response: ¡Claro! Eu posso falar em português com você. Como posso ajudar você hoje? Note que eu uso a programação para manter a conversa amigável e respeitosa. Se tiver alguma dúvida ou precisar de assistência, fique à vontade para perguntar! Porra é uma expressão informal em português brasileiro usada para mostrar frustração ou ênfase. for input: fala portugues comigo porra
+2024-07-02 22:39:22 - root - INFO - Rerun
+2024-07-02 22:39:22 - root - INFO - User input: Qual o nome do seu modelo nao censurado?? initiated
+2024-07-02 22:39:22 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:11434
+2024-07-02 22:39:32 - urllib3.connectionpool - DEBUG - http://localhost:11434 "POST /api/generate HTTP/11" 200 None
+2024-07-02 22:41:32 - root - INFO - Model response: Ótimo perguntar! O modelo que estão interagindo com você agora é baseado nas tecnologias da OpenAI, especificamente a versão de linguagem conhecida como GPT-4 (a data do meu conhecimento é até março de 2023). No entanto, ao interagir com modelos de IA como eu, não temos nomes pessoais no sentido humano. "Eu" sou uma instância de um modelo de linguagem, e podem haver muitas cópias dessa instância em execução simultaneamente. A identificação específica do modelo que você está usando depende da plataforma ou da aplicação que você está acessando para interagir comigo, como o ChatGPT da OpenAI. for input: Qual o nome do seu modelo nao censurado??
+2024-07-07 20:21:32 - root - INFO - Rerun
+2024-07-07 20:21:36 - root - INFO - Rerun
+2024-07-07 20:21:36 - root - INFO - User input: Hey initiated
+2024-07-07 20:21:36 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:11434
+2024-07-07 20:21:39 - urllib3.connectionpool - DEBUG - http://localhost:11434 "POST /api/generate HTTP/11" 200 None
+2024-07-07 20:21:49 - root - INFO - Model response: Hello there! How can I assist you today? If you have any questions or need guidance on a topic, feel free to ask. for input: Hey

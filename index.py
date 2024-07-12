@@ -13,6 +13,27 @@ logging.basicConfig(
     ]
     )
 
+
+def initDefs():
+    if 'user_input' not in state:
+        state['user_input'] = ''
+    if 'llm' not in state:
+        state['llm'] = Ollama(model="wizardlm2:latest")
+    if 'llm_math' not in state:
+        state['llm_math'] = Ollama(model="wizard-math")
+    if 'initiate' not in state:
+        state['initiate'] = True
+    if 'response' not in state:
+        state['response'] = ''
+    if 'resumo' not in state:
+        state['resumo'] = False
+    if 'math' not in state:
+        state['math'] = False
+    if 'arquivo' not in state:
+        state['arquivo'] = False
+    if 'image' not in state:
+        state['image'] = False
+
 def messageRegister(llm):
     logging.info(f'User input: {state["user_input"]} initiated')
     state['messages'].append({"role": "user", "content": state['user_input']})
@@ -50,24 +71,7 @@ def main():
 
     st.title("Projeto DECI")
 
-    if 'user_input' not in state:
-        state['user_input'] = ''
-    if 'llm' not in state:
-        state['llm'] = Ollama(model="wizardlm2:latest")
-    if 'llm_math' not in state:
-        state['llm_math'] = Ollama(model="wizard-math")
-    if 'initiate' not in state:
-        state['initiate'] = True
-    if 'response' not in state:
-        state['response'] = ''
-    if 'resumo' not in state:
-        state['resumo'] = False
-    if 'math' not in state:
-        state['math'] = False
-    if 'arquivo' not in state:
-        state['arquivo'] = False
-    if 'image' not in state:
-        state['image'] = False
+    initDefs()
 
 
     if state['initiate']:
